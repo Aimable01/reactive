@@ -1,10 +1,17 @@
 import Button from "@/components/Button";
 import ImageViewer from "@/components/ImageViewer";
 import { StyleSheet, Text, View } from "react-native";
+import * as ImagePicker from "expo-image-picker";
 
 const placeHolderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
+  const pickImageAsync = ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ["images"],
+    allowsEditing: true,
+    quality: 1,
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
